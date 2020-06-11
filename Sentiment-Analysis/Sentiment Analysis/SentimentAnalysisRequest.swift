@@ -15,7 +15,7 @@ struct SentimentAnalysisRequest {
     fileprivate(set) var type: SentimentAnalysisRequestType!
     fileprivate(set) var parameterValue: String!
 
-    var completionHandler: ((Void) -> Void)?
+    var completionHandler: (() -> Void)?
     var successHandler: ((JSON) -> Void)?
     var failureHandler: ((NSError) -> Void)?
 
@@ -35,12 +35,12 @@ struct SentimentAnalysisRequest {
     }
 
     func make() {
-        Alamofire.request(encodedUrl).responseJSON { response in
+        AF.request(encodedUrl).responseJSON { response in
             self.completionHandler?()
 
             switch response.result {
-            case .success:
-                let json = JSON(response.result.value!)
+            case .success(let value):
+                let json = JSON(value)
                 self.successHandler?(json)
             case .failure(let error):
                 self.failureHandler?(error as NSError)

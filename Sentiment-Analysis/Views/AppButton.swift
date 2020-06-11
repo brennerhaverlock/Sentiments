@@ -8,8 +8,8 @@ import UIKit
 /// A `UIButton` subclass with "springy" touch behavior.
 
 class AppButton: UIButton, TouchAnimatable {
-    var touchDownHandler: ((Void) -> Void)?
-    var touchUpHandler: ((Void) -> Void)?
+    var touchDownHandler: (() -> Void)?
+    var touchUpHandler: (() -> Void)?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,7 +33,7 @@ class AppButton: UIButton, TouchAnimatable {
         addTarget(self, action: #selector(didCancelTouch), for: [.touchCancel, .touchDragOutside])
     }
 
-    func didTouchDown() {
+    @objc func didTouchDown() {
         animateTouchDown()
         touchDownHandler?()
     }
@@ -43,11 +43,11 @@ class AppButton: UIButton, TouchAnimatable {
         touchUpHandler?()
     }
 
-    func didCancelTouch() {
+    @objc func didCancelTouch() {
         animateTouchUp()
     }
 
-    func didTap() {
+    @objc func didTap() {
         didTouchUp()
     }
 }

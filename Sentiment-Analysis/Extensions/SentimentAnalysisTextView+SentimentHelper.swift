@@ -31,7 +31,7 @@ extension SentimentAnalysisTextView {
 
         let normalizedText = NSMutableAttributedString(attributedString: attributedText)
         let range = (text as NSString).range(of: text)
-        normalizedText.removeAttribute(NSBackgroundColorAttributeName, range: range)
+        normalizedText.removeAttribute(NSAttributedString.Key.backgroundColor, range: range)
 
         attributedText = normalizedText
     }
@@ -46,12 +46,12 @@ extension SentimentAnalysisTextView {
                     continue
                 }
 
-                highlightedText.addAttribute(NSForegroundColorAttributeName,
+                highlightedText.addAttribute(NSAttributedString.Key.foregroundColor,
                     value: UIColor.white,
                     range: (text as NSString).range(of: elementText)
                 )
 
-                highlightedText.addAttribute(NSBackgroundColorAttributeName,
+                highlightedText.addAttribute(NSAttributedString.Key.backgroundColor,
                     value: AppColor.positive,
                     range: (text as NSString).range(of: elementText)
                 )
@@ -64,12 +64,12 @@ extension SentimentAnalysisTextView {
                     continue
                 }
 
-                highlightedText.addAttribute(NSForegroundColorAttributeName,
+                highlightedText.addAttribute(NSAttributedString.Key.foregroundColor,
                     value: UIColor.white,
                     range: (text as NSString).range(of: elementText)
                 )
 
-                highlightedText.addAttribute(NSBackgroundColorAttributeName,
+                highlightedText.addAttribute(NSAttributedString.Key.backgroundColor,
                     value: AppColor.negative,
                     range: (text as NSString).range(of: elementText)
                 )

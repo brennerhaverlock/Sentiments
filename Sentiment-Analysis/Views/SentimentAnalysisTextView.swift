@@ -18,7 +18,7 @@ class SentimentAnalysisTextView: UITextView {
     }
 
     fileprivate func configureView() {
-        textContainerInset = UIEdgeInsetsMake(10, 15, 15, 15)
+        textContainerInset = UIEdgeInsets(top: 10, left: 15, bottom: 15, right: 15)
 
         font = UIFont.systemFont(ofSize: defaultFontSize)
         textAlignment = defaultAlignment

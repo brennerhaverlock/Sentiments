@@ -28,8 +28,8 @@ class SentimentAnalysisViewController: UIViewController {
         // Adds observers to monitor when the keyboard will show or hide.
         // This is necessary to keep `footerView` above the keyboard.
         let defaultCenter = NotificationCenter.default
-        defaultCenter.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
-        defaultCenter.addObserver(self, selector: #selector(keyboardWillhide(_:)), name: .UIKeyboardWillHide, object: nil)
+        defaultCenter.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        defaultCenter.addObserver(self, selector: #selector(keyboardWillhide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -40,11 +40,11 @@ class SentimentAnalysisViewController: UIViewController {
 
     // MARK: - UIKeyboard
 
-    func keyboardWillShow(_ notification: Notification) {
+    @objc func keyboardWillShow(_ notification: Notification) {
         guard let userInfo = (notification as NSNotification).userInfo else { return }
 
-        let keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue
-        let animationDuration = (userInfo[UIKeyboardAnimationDurationUserInfoKey]! as AnyObject).doubleValue
+        let keyboardSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue
+        let animationDuration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey]! as AnyObject).doubleValue
 
         footerViewHeightConstraint.constant = (keyboardSize?.height)! + initialFooterViewHeightConstant
 
@@ -53,10 +53,10 @@ class SentimentAnalysisViewController: UIViewController {
         }, completion: nil)
     }
 
-    func keyboardWillhide(_ notification: Notification) {
+    @objc func keyboardWillhide(_ notification: Notification) {
         guard let userInfo = (notification as NSNotification).userInfo else { return }
 
-        let animationDuration = (userInfo[UIKeyboardAnimationDurationUserInfoKey]! as AnyObject).doubleValue
+        let animationDuration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey]! as AnyObject).doubleValue
 
         footerViewHeightConstraint.constant = initialFooterViewHeightConstant
 
@@ -72,7 +72,7 @@ class SentimentAnalysisViewController: UIViewController {
 
         footerView.moreButton.touchUpHandler = {
             let url = URL(string: AppConfig.gitHubUrl)!
-            UIApplication.shared.openURL(url)
+            UIApplication.shared.open(url)
         }
 
         footerView.doneButton.touchUpHandler = { [unowned self] in

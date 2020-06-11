@@ -1,7 +1,3 @@
-//
-//  TouchAnimatable.swift
-//  Created by Kyle Weiner on 2/4/16.
-//
 
 import UIKit
 
