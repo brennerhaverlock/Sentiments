@@ -17,7 +17,6 @@
 		2738051F1C63722C0002C222 /* SentimentAnalysisFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738051E1C63722C0002C222 /* SentimentAnalysisFooterView.swift */; };
 		273805211C6377D30002C222 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273805201C6377D30002C222 /* AppButton.swift */; };
 		273805261C6379110002C222 /* TouchAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273805251C6379110002C222 /* TouchAnimatable.swift */; };
-		273805281C63814E0002C222 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273805271C63814E0002C222 /* AppConfig.swift */; };
 		2738052E1C638BEB0002C222 /* SentimentAnalysisRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738052C1C638BEB0002C222 /* SentimentAnalysisRequest.swift */; };
 		2738052F1C638BEB0002C222 /* SentimentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738052D1C638BEB0002C222 /* SentimentType.swift */; };
 		273805311C6398AB0002C222 /* SentimentType+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273805301C6398AB0002C222 /* SentimentType+Helper.swift */; };
@@ -26,13 +25,11 @@
 		274126421DA4D2640052F33A /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274126411DA4D2640052F33A /* AppColor.swift */; };
 		274126431DA4D2640052F33A /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274126411DA4D2640052F33A /* AppColor.swift */; };
 		2776BC211C742D8E00441968 /* Sentiment-Analysis-Highlight-Action.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2776BC181C742D8E00441968 /* Sentiment-Analysis-Highlight-Action.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2776BC281C74632C00441968 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273805271C63814E0002C222 /* AppConfig.swift */; };
 		2776BC5B1C747F6900441968 /* SentimentAnalysisRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738052C1C638BEB0002C222 /* SentimentAnalysisRequest.swift */; };
 		2779C9E81C648CA8006DE31C /* SentimentAnalysisHeaderView+SentimentHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779C9E71C648CA8006DE31C /* SentimentAnalysisHeaderView+SentimentHelper.swift */; };
 		27E9BCAB1C754D1100577141 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27E9BCA31C754D1100577141 /* Assets.xcassets */; };
 		27E9BCAC1C754D1100577141 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9BCA51C754D1100577141 /* UIColor+Hex.swift */; };
 		27E9BCAD1C754D1100577141 /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = 27E9BCA71C754D1100577141 /* Action.js */; };
-		27E9BCAE1C754D1100577141 /* ActionRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9BCA81C754D1100577141 /* ActionRequestHandler.swift */; };
 		DC571728A8D56AD17A0A8E2D /* Pods_Sentiment_Analysis_Highlight_Action.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFE08BC520C739E6A31DA53 /* Pods_Sentiment_Analysis_Highlight_Action.framework */; };
 		E9016B78F82834B8AC7C5F6F /* Pods_Sentiment_Analysis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE987B154E7A5531BD7CEE55 /* Pods_Sentiment_Analysis.framework */; };
 /* End PBXBuildFile section */
@@ -75,7 +72,6 @@
 		2738051E1C63722C0002C222 /* SentimentAnalysisFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentimentAnalysisFooterView.swift; sourceTree = "<group>"; };
 		273805201C6377D30002C222 /* AppButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		273805251C6379110002C222 /* TouchAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchAnimatable.swift; sourceTree = "<group>"; };
-		273805271C63814E0002C222 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		2738052C1C638BEB0002C222 /* SentimentAnalysisRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentimentAnalysisRequest.swift; sourceTree = "<group>"; };
 		2738052D1C638BEB0002C222 /* SentimentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentimentType.swift; sourceTree = "<group>"; };
 		273805301C6398AB0002C222 /* SentimentType+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SentimentType+Helper.swift"; sourceTree = "<group>"; };
@@ -87,7 +83,6 @@
 		27E9BCA31C754D1100577141 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27E9BCA51C754D1100577141 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		27E9BCA71C754D1100577141 /* Action.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
-		27E9BCA81C754D1100577141 /* ActionRequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
 		27E9BCAA1C754D1100577141 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E136B7593C2059BE5AA5670 /* Pods-Sentiment-Analysis-Highlight-Action.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sentiment-Analysis-Highlight-Action.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sentiment-Analysis-Highlight-Action/Pods-Sentiment-Analysis-Highlight-Action.debug.xcconfig"; sourceTree = "<group>"; };
 		60D12E8B09B1CABE9E83171F /* Pods-Sentiment-Analysis-Highlight-Action.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sentiment-Analysis-Highlight-Action.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sentiment-Analysis-Highlight-Action/Pods-Sentiment-Analysis-Highlight-Action.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,7 +160,6 @@
 			isa = PBXGroup;
 			children = (
 				274126411DA4D2640052F33A /* AppColor.swift */,
-				273805271C63814E0002C222 /* AppConfig.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -273,7 +267,6 @@
 			isa = PBXGroup;
 			children = (
 				27E9BCA71C754D1100577141 /* Action.js */,
-				27E9BCA81C754D1100577141 /* ActionRequestHandler.swift */,
 			);
 			path = Highlighting;
 			sourceTree = "<group>";
@@ -477,7 +470,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2733E48E1C632A64006C41A9 /* SentimentAnalysisViewController.swift in Sources */,
-				273805281C63814E0002C222 /* AppConfig.swift in Sources */,
 				2738052F1C638BEB0002C222 /* SentimentType.swift in Sources */,
 				2738051F1C63722C0002C222 /* SentimentAnalysisFooterView.swift in Sources */,
 				2779C9E81C648CA8006DE31C /* SentimentAnalysisHeaderView+SentimentHelper.swift in Sources */,
@@ -501,8 +493,6 @@
 				2776BC5B1C747F6900441968 /* SentimentAnalysisRequest.swift in Sources */,
 				274126431DA4D2640052F33A /* AppColor.swift in Sources */,
 				27E9BCAC1C754D1100577141 /* UIColor+Hex.swift in Sources */,
-				2776BC281C74632C00441968 /* AppConfig.swift in Sources */,
-				27E9BCAE1C754D1100577141 /* ActionRequestHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

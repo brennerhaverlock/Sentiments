@@ -5,6 +5,7 @@
 
 import UIKit
 import SwiftyJSON
+import NaturalLanguage
 
 class SentimentAnalysisViewController: UIViewController {
     @IBOutlet weak var headerView: SentimentAnalysisHeaderView!
@@ -71,7 +72,7 @@ class SentimentAnalysisViewController: UIViewController {
         footerView.update(with: sentiment, animated: false)
 
         footerView.moreButton.touchUpHandler = {
-            let url = URL(string: AppConfig.gitHubUrl)!
+            let url = URL(string: "www.google.com")!
             UIApplication.shared.open(url)
         }
 
@@ -86,9 +87,33 @@ class SentimentAnalysisViewController: UIViewController {
         guard !textView.text.isEmpty else { return }
 
         // Disables the `doneButton` to prevent extraneous requests.
-        footerView.doneButton.isEnabled = false
+        footerView.doneButton.isEnabled = true
 
         var request = SentimentAnalysisRequest(type: .text, parameterValue: textView.text)
+        
+        
+        // feed it into the NaturalLanguage framework
+              let tagger = NLTagger(tagSchemes: [.sentimentScore])
+        tagger.string = request.parameterValue
+              
+              //ask for results
+        let (sentiment, _) = tagger.tag(at: request.parameterValue.startIndex, unit: .paragraph, scheme: .sentimentScore)
+              
+              // read the sentiment back and print it
+              let score = Double(sentiment?.rawValue ?? "0") ?? 0
+
+              
+              
+              if score >= 1 {
+                footerView.update(with: .positive, animated: false)
+              } else if score < 1 {
+                footerView.update(with: .negative, animated: false)
+              }
+              else {
+                footerView.update(with: .neutral, animated: false)
+              }
+        
+        
 
         request.successHandler = { [unowned self] response in
             self.handleAnalyzedText(response)
@@ -104,17 +129,19 @@ class SentimentAnalysisViewController: UIViewController {
 
         request.make()
     }
+    
+    
 
-    fileprivate func handleAnalyzedText(_ response: JSON) {
+    fileprivate func handleAnalyzedText(_ response: String) {
         // Return early if the response has an error.
-        guard response["reason"].string == nil else {
+       /* guard response["reason"].string == nil else {
             presentAlert(with: response["reason"].string! + ".")
             return
         }
-
+*/
         // Return early if unable to get a valid sentiment from the response.
         guard let
-            sentimentName = response["aggregate"]["sentiment"].string,
+            sentimentName = textView.text,
             let nextSentiment = SentimentType(rawValue: sentimentName) else {
             return
         }

@@ -8,7 +8,7 @@ import SwiftyJSON
 
 extension SentimentAnalysisTextView {
     /// Updates the view with the `SentimentType` and analyzed text response.
-    func update(with sentiment: SentimentType, response: JSON) {
+    func update(with sentiment: SentimentType, response: String) {
         // Hides the view, processes the text and then shows the view.
         UIView.animate(withDuration: 0.3, delay: 0, options: [.beginFromCurrentState, .curveEaseOut], animations: {
             [unowned self] in
@@ -16,7 +16,7 @@ extension SentimentAnalysisTextView {
         }) {
             [unowned self] finished in
             self.normalizeText()
-            self.highlightTextWithResponse(response)
+           // self.highlightTextWithResponse(response)
             self.tintColor = sentiment.color
 
             UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseOut, animations: {

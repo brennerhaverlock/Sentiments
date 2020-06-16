@@ -6,19 +6,43 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import NaturalLanguage
+
 
 enum SentimentAnalysisRequestType: String {
     case text, url
 }
+
 
 struct SentimentAnalysisRequest {
     fileprivate(set) var type: SentimentAnalysisRequestType!
     fileprivate(set) var parameterValue: String!
 
     var completionHandler: (() -> Void)?
-    var successHandler: ((JSON) -> Void)?
+    var successHandler: ((String) -> Void)?
     var failureHandler: ((NSError) -> Void)?
-
+    
+  
+    
+    
+    init(type: SentimentAnalysisRequestType, parameterValue: String) {
+        self.type = type
+        self.parameterValue = parameterValue
+    }
+    //logic for sentiment
+    
+    
+    // passes parameter value
+    func make() {
+        
+      
+        
+     
+        
+        
+        
+    }
+/*
     fileprivate var encodedUrl: String {
         let characters = CharacterSet.urlQueryAllowed
         let encodedValue = parameterValue.addingPercentEncoding(withAllowedCharacters: characters)!
@@ -37,7 +61,7 @@ struct SentimentAnalysisRequest {
     func make() {
         AF.request(encodedUrl).responseJSON { response in
             self.completionHandler?()
-
+            print(JSON(response))
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -47,4 +71,5 @@ struct SentimentAnalysisRequest {
             }
         }
     }
+ */
 }
